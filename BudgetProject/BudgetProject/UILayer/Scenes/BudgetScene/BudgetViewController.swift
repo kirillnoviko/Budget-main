@@ -48,6 +48,7 @@ class BudgetViewController: UIViewController, AddCategoryDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
              segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         segmentedControl.backgroundColor = .clear
         segmentedControl.tintColor = .clear
@@ -94,11 +95,11 @@ class BudgetViewController: UIViewController, AddCategoryDelegate {
         periodSegmentedControl1.setBackgroundImage(UIImage(), for: .highlighted, barMetrics: .default)
         periodSegmentedControl1.setDividerImage(UIImage(), forLeftSegmentState: .normal, rightSegmentState: .normal, barMetrics: .default)
 
-        let dayFalse = UIImage(named: "DayFalse")?.withRenderingMode(.alwaysOriginal)
+        let dayFalse = UIImage(named: "dayFalse")?.withRenderingMode(.alwaysOriginal)
         let weekFalse = UIImage(named: "WeekFalse")?.withRenderingMode(.alwaysOriginal)
         let monthFalse = UIImage(named: "MonthFalse")?.withRenderingMode(.alwaysOriginal)
         let yearFalse = UIImage(named: "YearFalse")?.withRenderingMode(.alwaysOriginal)
-        let dayTrue = UIImage(named: "DayTrue")?.withRenderingMode(.alwaysOriginal)
+        let dayTrue = UIImage(named: "dayTrue")?.withRenderingMode(.alwaysOriginal)
 
         periodSegmentedControl1.setImage(dayFalse, forSegmentAt: 0)
         periodSegmentedControl1.setImage(weekFalse, forSegmentAt: 1)
@@ -166,7 +167,7 @@ class BudgetViewController: UIViewController, AddCategoryDelegate {
     private func setupSegmentedControls() {
         setupSegmentedControl(segmentedControl, items: ["Expenses", "Income"], images: ["ExpensesFalse", "IncomeFalse"], activeImages: ["ExpensesTrue", "IncomeTrue"], action: #selector(segmentChanged(_:)))
         
-        setupSegmentedControl(periodSegmentedControl1, items: ["Day", "Week", "Month", "Year"], images: ["DayFalse", "WeekFalse", "MonthFalse", "YearFalse"], activeImages: ["DayTrue", "WeekTrue", "MonthTrue", "YearTrue"], action: #selector(periodSegmentChanged(_:)))
+        setupSegmentedControl(periodSegmentedControl1, items: ["Day", "Week", "Month", "Year"], images: ["dayFalse", "WeekFalse", "MonthFalse", "YearFalse"], activeImages: ["dayTrue", "WeekTrue", "MonthTrue", "YearTrue"], action: #selector(periodSegmentChanged(_:)))
         
         segmentedControl.selectedSegmentIndex = 0
         periodSegmentedControl1.selectedSegmentIndex = 0
@@ -245,8 +246,8 @@ class BudgetViewController: UIViewController, AddCategoryDelegate {
     }
     
     @IBAction func periodSegmentChanged(_ sender: UISegmentedControl) {
-        let images = ["DayTrue", "WeekTrue", "MonthTrue", "YearTrue"]
-        let inactiveImages = ["DayFalse", "WeekFalse", "MonthFalse", "YearFalse"]
+        let images = ["dayTrue", "WeekTrue", "MonthTrue", "YearTrue"]
+        let inactiveImages = ["dayFalse", "WeekFalse", "MonthFalse", "YearFalse"]
         
         for index in 0..<sender.numberOfSegments {
             sender.setImage(UIImage(named: inactiveImages[index])?.withRenderingMode(.alwaysOriginal), forSegmentAt: index)

@@ -36,7 +36,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         //5.setting window
         self.window = window
         window.makeKeyAndVisible()
-        let appCoordinator = AppCoordinator(type: .app, navigationController: navigationController)
+        let appCoordinator = AppCoordinator(type: .app, navigationController: navigationController, window: window)
+        self.coordinator = appCoordinator
         appCoordinator.start()
         
     }

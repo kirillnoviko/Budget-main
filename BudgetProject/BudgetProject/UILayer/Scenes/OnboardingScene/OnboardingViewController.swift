@@ -105,11 +105,13 @@ private extension OnboardingViewController{
     func setupButton(){
         view.addSubview(bottomButton)
         bottomButton.translatesAutoresizingMaskIntoConstraints = false
-        bottomButton.backgroundColor = AppColors.black
-        bottomButton.titleLabel?.font = .Roboto.bold.size(of: 18)
-        bottomButton.setTitleColor(AppColors.accentOrange, for: .normal)
+        bottomButton.setTitleColor(AppColors.white, for: .normal)
         bottomButton.layer.cornerRadius = 12
         bottomButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
+        // Установка изображения на кнопку
+        let backgroundImage = UIImage(named: "Button_background") // Замените "yourImageName" на имя вашего изображения
+        bottomButton.setBackgroundImage(backgroundImage, for: .normal)
+
         NSLayoutConstraint.activate([
             bottomButton.bottomAnchor.constraint(equalTo: pageControl.bottomAnchor, constant: -99),
             bottomButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
