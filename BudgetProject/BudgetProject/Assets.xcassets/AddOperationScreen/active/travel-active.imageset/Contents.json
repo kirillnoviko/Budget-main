@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "travel-active.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
